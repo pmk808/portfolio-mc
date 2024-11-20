@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 const NAVIGATION_ITEMS = [
-  'about',
+  'about Me',
   'services',
   'tools',
   'experience',

@@ -30,7 +30,7 @@ export const HeaderLeft = styled.div`
 `;
 
 export const HeaderTitle = styled.h1`
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: ${({ theme }) => theme.text.primary};
   margin: 0;
@@ -49,7 +49,7 @@ export const NavButton = styled.button`
   background: none;
   border: none;
   color: ${({ theme }) => theme.text.primary};
-  font-size: 0.875rem;
+  font-size: 1rem; 
   font-weight: 500;
   cursor: pointer;
   padding: 0.5rem;
