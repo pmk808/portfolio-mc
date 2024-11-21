@@ -16,6 +16,7 @@ const NAVIGATION_ITEMS = [
   'tools',
   'experience',
   'projects',
+  'blog',
   'contact'
 ] as const;
 

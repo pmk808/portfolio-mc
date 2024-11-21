@@ -1,5 +1,37 @@
-// src/components/About/Timeline/styles.ts
+// src/components/Experience/styles.ts
 import styled from 'styled-components';
+
+export const ExperienceSection = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+  }
+`;
+
+export const ContentContainer = styled.div`
+  width: 100%;
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const SectionTitle = styled.h2`
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+`;
 
 export const TimelineSection = styled.div`
   width: 100%;
@@ -23,6 +55,11 @@ export const Timeline = styled.div`
     width: 2px;
     height: 100%;
     background-color: ${({ theme }) => theme.border};
+
+    @media (max-width: 768px) {
+      left: 0;
+      transform: none;
+    }
   }
 `;
 
@@ -48,11 +85,12 @@ export const TimelineItem = styled.div<{ isLeft: boolean }>`
   }
 
   @media (max-width: 768px) {
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding-left: 2.5rem;
-
+    
     &::before {
       left: 0;
+      transform: translate(-50%, -50%);
     }
   }
 `;
@@ -82,7 +120,7 @@ export const TimelineContent = styled.div<{ isLeft: boolean }>`
 
   @media (max-width: 768px) {
     width: calc(100% - 3rem);
-
+    
     &::before {
       left: -0.5rem;
       transform: translateY(-50%) rotate(-135deg);

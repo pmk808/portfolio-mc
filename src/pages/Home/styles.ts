@@ -7,14 +7,35 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  > div {
+  > section {
     width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 4rem 1rem;
+    padding: 6rem 1rem; 
+    
+    &:nth-child(even) {
+      background-color: ${({ theme }) => theme.bg.secondary};
+    }
+
+    @media (max-width: 768px) {
+      padding: 4rem 1rem;
+    }
+  }
+
+  > div {  // For the "Coming Soon" sections
+    width: 100%;
+    padding: 6rem 1rem;
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    font-size: 1.125rem;
+    color: ${({ theme }) => theme.text.secondary};
+    background-color: ${({ theme }) => theme.bg.primary};
+    
+    &:nth-child(even) {
+      background-color: ${({ theme }) => theme.bg.secondary};
+    }
+
+    @media (max-width: 768px) {
+      padding: 4rem 1rem;
+    }
   }
 `;

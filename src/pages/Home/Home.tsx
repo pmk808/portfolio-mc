@@ -1,19 +1,24 @@
 // src/pages/Home/Home.tsx
 import { FC } from 'react';
 import { About } from '@/components/About';
+import { Services } from '@/components/Services';
+import { Tools } from '@/components/Tools';
+import { Experience } from '@/components/Experience';
+import { Projects } from '@/components/Projects';
+import { Contact } from '@/components/Contact';
+import { Blog } from '@/components/Blog'; 
 import { HomeContainer } from './styles';
 
 export const Home: FC = () => {
   return (
     <HomeContainer>
-      <section id="about me">
-        <About />
-      </section>
-      <div id="services">Services Section (Coming Soon)</div>
-      <div id="tools">Tools Section (Coming Soon)</div>
-      <div id="experience">Experience Section (Coming Soon)</div>
-      <div id="projects">Projects Section (Coming Soon)</div>
-      <div id="contact">Contact Section (Coming Soon)</div>
+      <About />
+      <Services />
+      <Tools />
+      <Experience />
+      <Projects />
+      <Blog />
+      <Contact />
     </HomeContainer>
   );
 };
