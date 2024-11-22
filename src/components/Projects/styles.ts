@@ -6,39 +6,43 @@ export const ProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6rem 1rem;
+  padding: 4rem 1rem;
 
   @media (max-width: 768px) {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
   }
 `;
 
 export const ContentContainer = styled.div`
   width: 100%;
-  max-width: var(--max-width);
+  max-width: 800px; // Match other sections
   display: flex;
   flex-direction: column;
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
   color: ${({ theme }) => theme.text.primary};
 `;
 
-export const ProjectsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+export const SectionSubtitle = styled.p`
+  font-size: 1.125rem;
+  color: ${({ theme }) => theme.text.secondary};
+  margin-bottom: 3rem;
+  text-align: left;
+`;
 
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
+export const ProjectsGrid = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 `;
 
 export const ProjectCard = styled.article`
+  width: 100%;
   background: ${({ theme }) => theme.bg.secondary};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: 8px;
@@ -51,37 +55,40 @@ export const ProjectCard = styled.article`
 `;
 
 export const ProjectContent = styled.div`
-  padding: 1rem;
+  padding: 1.75rem;
 `;
 
 export const ProjectMainContent = styled.div`
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: start;
 
   @media (max-width: 480px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 `;
 
 export const ThumbnailContainer = styled.div`
-  flex-shrink: 0;
-  width: 80px;
-  height: 80px;
-  border-radius: 4px;
+  width: 200px;  
+  height: 140px; 
+  border-radius: 6px;
   overflow: hidden;
   border: 1px solid ${({ theme }) => theme.border};
 
   @media (max-width: 480px) {
-    width: 60px;
-    height: 60px;
+    width: 160px;  
+    height: 100px; 
   }
 `;
 
 export const ProjectThumbnail = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; 
+  // object-fit: contain;  // Use this if you want to ensure the whole image is visible
+  background-color: ${({ theme }) => theme.bg.primary}; // Add background color for 'contain' mode
 `;
 
 export const ProjectInfo = styled.div`
@@ -97,7 +104,7 @@ export const ProjectHeader = styled.div`
 `;
 
 export const ProjectTitle = styled.h3`
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: ${({ theme }) => theme.text.primary};
   margin: 0;
@@ -115,15 +122,15 @@ export const ProjectLink = styled.a`
 `;
 
 export const ProjectDate = styled.span`
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   color: ${({ theme }) => theme.text.secondary};
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 `;
 
 export const ProjectDescription = styled.p`
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: ${({ theme }) => theme.text.secondary};
   margin: 0;
   

@@ -2,34 +2,34 @@
 import { FC } from 'react';
 import * as S from './styles';
 
-interface TechnologyCategories {
-  current: string[];
-  previous: string[];
-  interested: string[];
-}
-
 const Tools: FC = () => {
-  const technologies: TechnologyCategories = {
+  const technologies = {
     current: [
-      "TypeScript",
-      "React",
-      "Node.js",
+      "Go",
       "PostgreSQL",
-      "AWS",
-      "Docker"
+      "React",
+      "TypeScript",
+      "Docker",
+      "Git",
+      "NodeJS",
+      "MongoDB",
+      "Azure DevOps"
     ],
     previous: [
-      "Angular",
-      "Python",
-      "MongoDB",
-      "Redux",
-      "Express"
+      "Laravel",
+      "Django REST Framework",
+      "VueJS",
+      "MySQL",
+      "Flutter",
+      "Firebase",
+      "Supabase"
     ],
-    interested: [
-      "Rust",
-      "Go",
+    interest: [
       "Web3",
-      "Machine Learning"
+      "Machine Learning",
+      "Blockchain",
+      "AI",
+      "Decentralized Systems"
     ]
   };
 
@@ -59,7 +59,7 @@ const Tools: FC = () => {
           <S.TechCategory>
             <h4>Interested In</h4>
             <S.TechGrid>
-              {technologies.interested.map(tech => (
+              {technologies.interest.map(tech => (
                 <S.TechItem key={tech}>{tech}</S.TechItem>
               ))}
             </S.TechGrid>

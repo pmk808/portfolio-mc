@@ -2,30 +2,35 @@
 import { FC } from 'react';
 import * as S from './styles';
 import { Certifications } from './Certifications';
+import profile from '@/assets/images/about/profile.jpg';
 
 const About: FC = () => {
   return (
     <S.AboutSection id="about Me">
       <S.ContentContainer>
         <S.SectionTitle>About Me</S.SectionTitle>
-        
+
         <S.AboutGrid>
-          {/* Biography */}
           <S.BiographySection>
-            <S.BioContent>
-              <p>
-                I'm a Full Stack Developer passionate about building scalable web applications
-                and exploring new technologies. With a strong foundation in both frontend and
-                backend development, I focus on creating efficient, maintainable solutions.
-              </p>
-              <p>
-                Currently, I specialize in TypeScript, React, and Node.js, while continuously
-                expanding my knowledge in cloud technologies and software architecture.
-              </p>
-            </S.BioContent>
+            <S.BioSection>
+              <S.ImageContainer>
+                <S.ProfileImage
+                  src={profile}
+                  alt="MC Phy Cabanes"
+                />
+              </S.ImageContainer>
+              <S.BioContent>
+                <S.NameTitle>MC PHY CABANES</S.NameTitle>
+                <S.RoleLabel>Backend Developer</S.RoleLabel>
+                <p>
+                  I specialize in building backend systems and APIs, constantly expanding my knowledge
+                  in server-side technologies. Passionate about learning new tools and best practices,
+                  I'm dedicated to growing my expertise while delivering reliable solutions.
+                </p>
+              </S.BioContent>
+            </S.BioSection>
           </S.BiographySection>
 
-          {/* Certifications */}
           <Certifications />
         </S.AboutGrid>
       </S.ContentContainer>

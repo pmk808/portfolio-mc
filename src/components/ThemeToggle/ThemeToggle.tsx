@@ -40,7 +40,7 @@ export const ThemeToggle: FC = () => {
   const getCurrentIcon = () => {
     const currentTheme = themes.find(t => t.id === theme);
     const Icon = currentTheme?.icon || Sun;
-    return <Icon size={20} />;
+    return <Icon size={15} />;
   };
 
   return (

@@ -2,11 +2,8 @@
 import { FC } from 'react';
 import { 
   Code, 
-  LayoutGrid, 
-  Database, 
-  Cloud, 
-  Smartphone, 
-  Terminal 
+  Server, 
+  Layout
 } from 'lucide-react';
 import * as S from './styles';
 
@@ -19,34 +16,19 @@ interface Service {
 const Services: FC = () => {
   const services: Service[] = [
     {
-      title: 'Frontend Development',
-      description: 'Building responsive and interactive user interfaces using modern frameworks like React, with a focus on performance and user experience.',
-      icon: LayoutGrid
-    },
-    {
       title: 'Backend Development',
-      description: 'Developing robust server-side applications and APIs using Node.js, Express, and other modern backend technologies.',
-      icon: Terminal
+      description: 'Building robust backend systems, focusing on RESTful APIs, microservices, and PostgreSQL database design.',
+      icon: Server
     },
     {
-      title: 'Database Design',
-      description: 'Designing and implementing efficient database schemas and solutions using SQL and NoSQL databases.',
-      icon: Database
-    },
-    {
-      title: 'Cloud Solutions',
-      description: 'Deploying and managing applications on cloud platforms like AWS, with expertise in cloud architecture and DevOps practices.',
-      icon: Cloud
-    },
-    {
-      title: 'Mobile Development',
-      description: 'Creating cross-platform mobile applications using React Native and modern mobile development tools.',
-      icon: Smartphone
-    },
-    {
-      title: 'Custom Solutions',
-      description: 'Developing tailored software solutions to meet specific business needs and requirements.',
+      title: 'API Development',
+      description: 'Creating clean, documented APIs with efficient database modeling and secure authentication systems.',
       icon: Code
+    },
+    {
+      title: 'Basic Frontend',
+      description: 'Simple and functional frontend implementations to complement your backend services.',
+      icon: Layout
     }
   ];
 
@@ -55,7 +37,7 @@ const Services: FC = () => {
       <S.ContentContainer>
         <S.SectionTitle>Services</S.SectionTitle>
         <S.SectionSubtitle>
-          Specialized in full-stack development and cloud solutions
+          Backend specialist offering clean, efficient solutions
         </S.SectionSubtitle>
 
         <S.ServicesGrid>

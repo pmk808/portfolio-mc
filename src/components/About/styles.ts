@@ -14,18 +14,21 @@ export const AboutSection = styled.section`
 `;
 
 export const ContentContainer = styled.div`
-  width: 100%;
+   width: 100%;
   max-width: var(--max-width);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
+  padding: 0 2rem; 
 `;
 
 export const SectionTitle = styled.h2`
+  width: 100%;
+  max-width: 800px;
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 3rem;
-  text-align: center;
+  text-align: left;
 
   @media (max-width: 768px) {
     font-size: 1.75rem;
@@ -38,10 +41,10 @@ export const AboutGrid = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
 
   @media (max-width: 768px) {
-    gap: 3rem;
+    gap: 1.5rem;
   }
 `;
 
@@ -53,14 +56,15 @@ export const BiographySection = styled.div`
 
 export const BioContent = styled.div`
   color: ${({ theme }) => theme.text.secondary};
-  line-height: 1.7;
+  line-height: 1.6;
+  text-align: left;
 
-  p + p {
-    margin-top: 1.5rem;
+  p {
+    font-size: 1.19rem;
   }
 
   @media (max-width: 768px) {
-    font-size: 0.9375rem;
+    text-align: center;
   }
 `;
 
@@ -302,4 +306,55 @@ export const TimelineDescription = styled.p`
   font-size: 0.875rem;
   color: ${({ theme }) => theme.text.secondary};
   line-height: 1.6;
+`;
+
+export const BioSection = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 240px 1fr; // Fixed width for image column
+  gap: 2.5rem;
+  align-items: start;
+  max-width: 800px;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+`;
+
+export const ImageContainer = styled.div`
+  width: 240px;
+  aspect-ratio: 1;
+
+  @media (max-width: 768px) {
+    width: 180px;
+    margin: 0 auto;
+  }
+`;
+
+export const ProfileImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: grayscale(0%);
+  }
+`;
+
+export const NameTitle = styled.h3`
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text.primary};
+`;
+
+export const RoleLabel = styled.h4`
+  font-size: 1.125rem;
+  color: ${({ theme }) => theme.accent};
+  margin-bottom: 1.8rem;
+  font-weight: 500;
 `;

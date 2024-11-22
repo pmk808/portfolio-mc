@@ -15,17 +15,16 @@ export const ToolsSection = styled.section`
 
 export const ContentContainer = styled.div`
   width: 100%;
-  max-width: var(--max-width);
+  max-width: 800px; // Match other sections
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 export const SectionTitle = styled.h2`
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 3rem;
-  text-align: center;
+  text-align: left;
 
   @media (max-width: 768px) {
     font-size: 1.75rem;
@@ -35,59 +34,39 @@ export const SectionTitle = styled.h2`
 
 export const TechnologiesSection = styled.div`
   width: 100%;
-  max-width: 800px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-
-  @media (max-width: 768px) {
-    gap: 1.5rem;
-  }
+  gap: 3rem;
 `;
 
 export const TechCategory = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
   h4 {
-    margin-bottom: 1rem;
-    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
     color: ${({ theme }) => theme.text.primary};
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    margin-top: 1rem;
+    font-weight: 500;
   }
 `;
 
 export const TechGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-
-  @media (max-width: 480px) {
-    gap: 0.5rem;
-  }
+  gap: 1rem;
 `;
 
 export const TechItem = styled.span`
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: ${({ theme }) => theme.bg.secondary};
   border: 1px solid ${({ theme }) => theme.border};
   color: ${({ theme }) => theme.text.secondary};
+  transition: transform 0.2s ease;
 
-  @media (max-width: 480px) {
-    font-size: 0.8125rem;
-    padding: 0.375rem 0.75rem;
+  &:hover {
+    transform: translateY(-2px);
+    color: ${({ theme }) => theme.text.primary};
   }
 `;

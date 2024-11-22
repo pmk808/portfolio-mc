@@ -8,7 +8,6 @@ export const ThemePickerContainer = styled.div`
 export const ThemeButton = styled.button`
   background: none;
   border: none;
-  padding: 0.5rem;
   cursor: pointer;
   color: ${({ theme }) => theme.text.primary};
   display: flex;
@@ -47,6 +46,7 @@ export const ThemeOption = styled.button`
   cursor: pointer;
   border-radius: 0.375rem;
   gap: 0.75rem;
+  font-size: 0.95rem;
   transition: background-color 0.2s ease;
 
   &:hover {
