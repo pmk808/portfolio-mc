@@ -15,151 +15,92 @@ export const ContactSection = styled.section`
 
 export const ContentContainer = styled.div`
   width: 100%;
-  max-width: var(--max-width);
+  max-width: 800px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const SectionTitle = styled.h2`
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  text-align: left;
   color: ${({ theme }) => theme.text.primary};
+  width: 100%;
 `;
 
 export const SectionSubtitle = styled.p`
   font-size: 1.125rem;
   color: ${({ theme }) => theme.text.secondary};
-  text-align: center;
-  max-width: 600px;
+  text-align: left;
   margin-bottom: 3rem;
+  width: 100%;
 `;
 
 export const ContactContent = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-
-  @media (max-width: 968px) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+  margin-top: 1rem;
 `;
 
 export const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
+  width: 100%;
 `;
 
 export const ContactText = styled.p`
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   color: ${({ theme }) => theme.text.secondary};
+  text-align: left;
+  max-width: 600px;
 `;
 
-export const ContactLinks = styled.div`
+export const SocialLinksContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const ContactLink = styled.a`
-  display: flex;
+    display: flex;
   align-items: center;
   gap: 0.75rem;
   color: ${({ theme }) => theme.text.secondary};
   text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 4px;
+  padding: 1rem;
+  border-radius: 8px;
   transition: all 0.2s ease;
+  border: 1px solid ${({ theme }) => theme.border};
+  flex: 1;
+  min-width: 200px;
+
+  svg {
+    width: 15px;
+    height: 15px;
+    min-width: 15px; 
+    min-height: 15px; 
+  }
 
   span {
-    font-size: 0.875rem;
+    font-size: 0.90rem;
   }
 
   &:hover {
     color: ${({ theme }) => theme.accent};
     background-color: ${({ theme }) => `${theme.bg.secondary}`};
-  }
-`;
-
-export const ContactForm = styled.form`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-`;
-
-export const InputGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-`;
-
-export const Label = styled.label`
-  font-size: 0.875rem;
-  color: ${({ theme }) => theme.text.primary};
-`;
-
-export const Input = styled.input`
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
-  border: 1px solid ${({ theme }) => theme.border};
-  border-radius: 4px;
-  background-color: ${({ theme }) => theme.bg.secondary};
-  color: ${({ theme }) => theme.text.primary};
-  transition: border-color 0.2s ease;
-
-  &:focus {
-    outline: none;
-    border-color: ${({ theme }) => theme.accent};
-  }
-`;
-
-export const TextArea = styled.textarea`
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
-  border: 1px solid ${({ theme }) => theme.border};
-  border-radius: 4px;
-  background-color: ${({ theme }) => theme.bg.secondary};
-  color: ${({ theme }) => theme.text.primary};
-  resize: vertical;
-  min-height: 120px;
-  transition: border-color 0.2s ease;
-
-  &:focus {
-    outline: none;
-    border-color: ${({ theme }) => theme.accent};
-  }
-`;
-
-export const SubmitButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: white;
-  background-color: ${({ theme }) => theme.accent};
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-
-  &:hover {
-    transform: translateY(-1px);
-    background-color: ${({ theme }) => `${theme.accent}dd`};
+    transform: translateY(-2px);
   }
 
-  &:active {
-    transform: translateY(0);
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;

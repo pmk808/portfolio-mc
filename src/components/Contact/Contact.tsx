@@ -1,43 +1,16 @@
 // src/components/Contact/Contact.tsx
-import { FC, useState } from 'react';
-import { Mail, Github, Linkedin, Send } from 'lucide-react';
+import { FC } from 'react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 import * as S from './styles';
 
-interface ContactFormData {
-  name: string;
-  email: string;
-  message: string;
-}
-
 const Contact: FC = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
+  const ICON_SIZE = 20;
   return (
     <S.ContactSection id="contact">
       <S.ContentContainer>
         <S.SectionTitle>Contact</S.SectionTitle>
         <S.SectionSubtitle>
-          Feel free to reach out for collaborations or just a friendly hello
+          Feel free to reach out through any of these platforms
         </S.SectionSubtitle>
 
         <S.ContactContent>
@@ -47,74 +20,33 @@ const Contact: FC = () => {
               opportunities to be part of your visions.
             </S.ContactText>
             
-            <S.ContactLinks>
-              <S.ContactLink href="mailto:your.email@example.com">
-                <Mail size={20} />
-                <span>your.email@example.com</span>
+            <S.SocialLinksContainer>
+              <S.ContactLink 
+                href="mailto:cabanesmcphy123@gmail.com"
+              >
+                <Mail size={ICON_SIZE } />
+                <span>cabanesmcphy123@gmail.com</span>
               </S.ContactLink>
               
               <S.ContactLink 
-                href="https://github.com/yourusername" 
+                href="https://github.com/pmk808" 
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github size={20} />
-                <span>github.com/yourusername</span>
+                <Github size={ICON_SIZE } />
+                <span>github.com/pmk808</span>
               </S.ContactLink>
               
               <S.ContactLink 
-                href="https://linkedin.com/in/yourusername" 
+                href="https://www.linkedin.com/in/mc-phy-cabanes-6b35b31b7/" 
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin size={20} />
-                <span>linkedin.com/in/yourusername</span>
+                <Linkedin size={ICON_SIZE } />
+                <span>linkedin.com/in/mcphy</span>
               </S.ContactLink>
-            </S.ContactLinks>
+            </S.SocialLinksContainer>
           </S.ContactInfo>
-
-          <S.ContactForm onSubmit={handleSubmit}>
-            <S.InputGroup>
-              <S.Label htmlFor="name">Name</S.Label>
-              <S.Input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </S.InputGroup>
-
-            <S.InputGroup>
-              <S.Label htmlFor="email">Email</S.Label>
-              <S.Input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </S.InputGroup>
-
-            <S.InputGroup>
-              <S.Label htmlFor="message">Message</S.Label>
-              <S.TextArea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-              />
-            </S.InputGroup>
-
-            <S.SubmitButton type="submit">
-              <span>Send Message</span>
-              <Send size={16} />
-            </S.SubmitButton>
-          </S.ContactForm>
         </S.ContactContent>
       </S.ContentContainer>
     </S.ContactSection>
