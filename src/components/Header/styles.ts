@@ -30,11 +30,22 @@ export const HeaderLeft = styled.div`
   gap: 1rem;
 `;
 
+export const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
 export const HeaderTitle = styled.h1`
   font-size: 1.5rem;
   font-weight: 600;
   color: ${({ theme }) => theme.text.primary};
   margin: 0;
+`;
+
+export const AccentText = styled.span`
+  color: ${({ theme }) => theme.accent};
+  font-weight: 600;
 `;
 
 export const HeaderNav = styled.nav`

@@ -20,14 +20,16 @@ export const Header: FC = () => {
   const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
-    setIsMenuOpen(false); 
+    setIsMenuOpen(false);
   };
 
   return (
     <S.HeaderContainer>
       <S.HeaderContent>
         <S.HeaderLeft>
-          <S.HeaderTitle>mc_phy.cabanes</S.HeaderTitle>
+          <S.HeaderTitle>
+            mc<S.AccentText>_</S.AccentText>phy<S.AccentText>.</S.AccentText>cabanes
+          </S.HeaderTitle>
           <ThemeToggle />
         </S.HeaderLeft>
 
