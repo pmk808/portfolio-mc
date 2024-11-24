@@ -87,8 +87,7 @@ export const ProjectThumbnail = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover; 
-  // object-fit: contain;  // Use this if you want to ensure the whole image is visible
-  background-color: ${({ theme }) => theme.bg.primary}; // Add background color for 'contain' mode
+  background-color: ${({ theme }) => theme.bg.primary}; 
 `;
 
 export const ProjectInfo = styled.div`
@@ -134,9 +133,44 @@ export const ProjectDescription = styled.p`
   color: ${({ theme }) => theme.text.secondary};
   margin: 0;
   
-  // Line clamping for description
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 `;
+
+export const ShowMoreContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  width: 100%;
+  padding: 0 1rem;
+`;
+
+export const ShowMoreLine = styled.div`
+  flex: 1;
+  height: 1px;
+  background-color: ${({ theme }) => theme.border};
+`;
+
+export const ShowMoreButton = styled.button`
+  background: none;
+  border: none;
+  color: ${({ theme }) => theme.text.secondary};
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.accent};
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+`;
+

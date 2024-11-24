@@ -1,5 +1,5 @@
 // src/components/Projects/Projects.tsx
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Github } from 'lucide-react';
 import btr from '@/assets/images/projects/btr.png';
 import bible from '@/assets/images/projects/bible-bliss.png';
@@ -21,6 +21,7 @@ interface Project {
 }
 
 const Projects: FC = () => {
+  const [showAllProjects, setShowAllProjects] = useState(false);
   const projects: Project[] = [
     {
       title: "BTr Status Tagging System",
@@ -87,51 +88,63 @@ const Projects: FC = () => {
     }
   ];
 
+  const visibleProjects = showAllProjects ? projects : projects.slice(0, 3);
+
   return (
     <S.ProjectsSection id="projects">
-      <S.ContentContainer>
-        <S.SectionTitle>Projects</S.SectionTitle>
-        <S.SectionSubtitle>
-          A collection of web, mobile, and desktop applications I've built throughout my journey
-        </S.SectionSubtitle>
-        <S.ProjectsGrid>
-          {projects.map((project, index) => (
-            <S.ProjectCard key={index}>
-              <S.ProjectContent>
-                <S.ProjectMainContent>
-                  <S.ThumbnailContainer>
-                    <S.ProjectThumbnail 
-                      src={project.thumbnail} 
-                      alt={`${project.title} preview`}
-                    />
-                  </S.ThumbnailContainer>
-                  <S.ProjectInfo>
-                    <S.ProjectHeader>
-                      <S.ProjectTitle>{project.title}</S.ProjectTitle>
-                      {project.githubUrl && (
-                        <S.ProjectLink 
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`View ${project.title} on GitHub`}
-                        >
-                          <Github size={18} />
-                        </S.ProjectLink>
-                      )}
-                    </S.ProjectHeader>
-                    <S.ProjectDate>{project.monthYear}</S.ProjectDate>
-                    <S.ProjectDescription>
-                      {project.description}
-                    </S.ProjectDescription>
-                  </S.ProjectInfo>
-                </S.ProjectMainContent>
-              </S.ProjectContent>
-            </S.ProjectCard>
-          ))}
-       </S.ProjectsGrid>
-      </S.ContentContainer>
-    </S.ProjectsSection>
-  );
+    <S.ContentContainer>
+      <S.SectionTitle>Projects</S.SectionTitle>
+      <S.SectionSubtitle>
+        A collection of web, mobile, and desktop applications I've built throughout my journey
+      </S.SectionSubtitle>
+      <S.ProjectsGrid>
+        {visibleProjects.map((project, index) => (
+          <S.ProjectCard key={index}>
+            <S.ProjectContent>
+              <S.ProjectMainContent>
+                <S.ThumbnailContainer>
+                  <S.ProjectThumbnail 
+                    src={project.thumbnail} 
+                    alt={`${project.title} preview`}
+                  />
+                </S.ThumbnailContainer>
+                <S.ProjectInfo>
+                  <S.ProjectHeader>
+                    <S.ProjectTitle>{project.title}</S.ProjectTitle>
+                    {project.githubUrl && (
+                      <S.ProjectLink 
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.title} on GitHub`}
+                      >
+                        <Github size={18} />
+                      </S.ProjectLink>
+                    )}
+                  </S.ProjectHeader>
+                  <S.ProjectDate>{project.monthYear}</S.ProjectDate>
+                  <S.ProjectDescription>
+                    {project.description}
+                  </S.ProjectDescription>
+                </S.ProjectInfo>
+              </S.ProjectMainContent>
+            </S.ProjectContent>
+          </S.ProjectCard>
+        ))}
+      </S.ProjectsGrid>
+      
+      {projects.length > 6 && (
+        <S.ShowMoreContainer>
+          <S.ShowMoreLine />
+          <S.ShowMoreButton onClick={() => setShowAllProjects(!showAllProjects)}>
+            {showAllProjects ? 'Show Less' : 'Show More'}
+          </S.ShowMoreButton>
+          <S.ShowMoreLine />
+        </S.ShowMoreContainer>
+      )}
+    </S.ContentContainer>
+  </S.ProjectsSection>
+);
 };
 
 export default Projects;

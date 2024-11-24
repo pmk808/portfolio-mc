@@ -21,6 +21,7 @@ export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 `;
 
 export const HeaderLeft = styled.div`
@@ -49,7 +50,7 @@ export const NavButton = styled.button`
   background: none;
   border: none;
   color: ${({ theme }) => theme.text.primary};
-  font-size: 1rem; 
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   padding: 0.5rem;
@@ -57,5 +58,61 @@ export const NavButton = styled.button`
 
   &:hover {
     color: ${({ theme }) => theme.accent};
+  }
+`;
+
+export const MobileMenuButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  color: ${({ theme }) => theme.text.primary};
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.accent};
+  }
+`;
+
+export const MobileNav = styled.nav<{ isOpen: boolean }>`
+  display: none;
+  
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: ${({ theme }) => theme.bg.primary};
+    border-bottom: 1px solid ${({ theme }) => theme.border};
+    padding: 1rem;
+    transform: translateY(${({ isOpen }) => (isOpen ? '0' : '-100%')});
+    opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
+    visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px ${({ theme }) => `${theme.border}40`};
+  }
+`;
+
+export const MobileNavButton = styled(NavButton)`
+  width: 100%;
+  padding: 1rem;
+  text-align: left;
+  font-size: 1.1rem;
+  
+  &:not(:last-child) {
+    border-bottom: 1px solid ${({ theme }) => theme.border};
+  }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.bg.secondary};
   }
 `;

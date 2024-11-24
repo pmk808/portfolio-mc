@@ -51,21 +51,99 @@ export const AboutGrid = styled.div`
 export const BiographySection = styled.div`
   width: 100%;
   max-width: 800px;
-  text-align: center;
+  margin-bottom: 3rem;
 `;
 
 export const BioContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+export const IntroHeader = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+`;
+
+export const TerminalCard = styled.div`
+  width: 100%;
+  max-width: 500px;
+  background: ${({ theme }) => theme.bg.secondary};
+  border: 1px solid ${({ theme }) => theme.border};
+  border-radius: 8px;
+  overflow: hidden;
+`;
+
+export const TerminalHeader = styled.div`
+  background: ${({ theme }) => theme.bg.primary};
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid ${({ theme }) => theme.border};
+  display: flex;
+  align-items: center;
+`;
+
+export const TerminalDots = styled.div`
+  display: flex;
+  gap: 0.375rem;
+  margin-right: 1rem;
+
+  span {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    
+    &:nth-child(1) {
+      background-color: #ff5f56;
+    }
+    
+    &:nth-child(2) {
+      background-color: #ffbd2e;
+    }
+    
+    &:nth-child(3) {
+      background-color: #27c93f;
+    }
+  }
+`;
+
+export const TerminalTitle = styled.div`
   color: ${({ theme }) => theme.text.secondary};
-  line-height: 1.6;
-  text-align: left;
+  font-size: 0.875rem;
+  font-family: monospace;
+`;
 
-  p {
-    font-size: 1.19rem;
+export const TerminalBody = styled.div`
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+export const TerminalLine = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: ${({ theme }) => theme.text.primary};
+  font-size: 1rem;
+
+  svg {
+    color: ${({ theme }) => theme.accent};
   }
 
-  @media (max-width: 768px) {
-    text-align: center;
+  span {
+    font-family: monospace;
   }
+`;
+
+export const BioText = styled.p`
+  color: ${({ theme }) => theme.text.secondary};
+  line-height: 1.8;
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 `;
 
 export const TechnologiesSection = styled.div`

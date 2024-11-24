@@ -88,6 +88,7 @@ export const Certifications: FC = () => {
     imageUrl: '',
     certName: ''
   });
+  const [showAllCoursera, setShowAllCoursera] = useState(false);
 
   const openModal = (cert: Certification) => {
     setModalState({
@@ -108,6 +109,10 @@ export const Certifications: FC = () => {
   const professionalCerts = certificationCategories[0];
   const localCerts = certificationCategories[1];
   const onlineCerts = certificationCategories[2];
+  
+  const visibleOnlineCerts = showAllCoursera 
+    ? onlineCerts.items 
+    : onlineCerts.items.slice(0, 3);
 
   return (
     <>
@@ -121,13 +126,13 @@ export const Certifications: FC = () => {
               <S.CertificationsList>
                 {professionalCerts.items.map((cert) => (
                   <S.CertificationCard key={`${cert.name}-${cert.date}`}>
-                  <h4>{cert.name}</h4>
-                  <p>{cert.issuer}</p>
-                  <span>{cert.date}</span>
-                  <S.ViewLink onClick={() => openModal(cert)}>
-                    View Certificate
-                  </S.ViewLink>
-                </S.CertificationCard>
+                    <h4>{cert.name}</h4>
+                    <p>{cert.issuer}</p>
+                    <span>{cert.date}</span>
+                    <S.ViewLink onClick={() => openModal(cert)}>
+                      View Certificate
+                    </S.ViewLink>
+                  </S.CertificationCard>
                 ))}
               </S.CertificationsList>
             </S.CertificationCategory>
@@ -154,7 +159,7 @@ export const Certifications: FC = () => {
           <S.OnlineCertifications>
             <S.CategorySubtitle>{onlineCerts.title}</S.CategorySubtitle>
             <div className="certs-grid">
-              {onlineCerts.items.map((cert) => (
+              {visibleOnlineCerts.map((cert) => (
                 <S.CertificationCard key={`${cert.name}-${cert.date}`}>
                   <h4>{cert.name}</h4>
                   <p>{cert.issuer}</p>
@@ -165,6 +170,13 @@ export const Certifications: FC = () => {
                 </S.CertificationCard>
               ))}
             </div>
+            <S.ShowMoreContainer>
+              <S.ShowMoreLine />
+              <S.ShowMoreButton onClick={() => setShowAllCoursera(!showAllCoursera)}>
+                {showAllCoursera ? 'Show Less' : 'Show More'}
+              </S.ShowMoreButton>
+              <S.ShowMoreLine />
+            </S.ShowMoreContainer>
           </S.OnlineCertifications>
         </S.CertificationsContainer>
       </S.CertificationsSection>

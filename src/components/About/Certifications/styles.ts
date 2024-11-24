@@ -188,3 +188,32 @@ export const CertificateImage = styled.img`
   height: auto;
   border-radius: 4px;
 `;
+
+export const ShowMoreContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+`;
+
+export const ShowMoreLine = styled.div`
+  flex: 1;
+  height: 1px;
+  background-color: ${({ theme }) => theme.border};
+`;
+
+export const ShowMoreButton = styled.button`
+  background: none;
+  border: none;
+  color: ${({ theme }) => theme.text.secondary};
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.accent};
+  }
+`;
