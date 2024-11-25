@@ -30,7 +30,7 @@ const About: FC = () => {
                     </S.TerminalLine>
                     <S.TerminalLine>
                       <Code2 size={16} />
-                      <span>Backend Developer</span>
+                      <span>Web Developer</span>
                     </S.TerminalLine>
                     <S.TerminalLine>
                       <Quote size={16} />
@@ -40,9 +40,9 @@ const About: FC = () => {
                 </S.TerminalCard>
               </S.IntroHeader>
               <S.BioText>
-                I specialize in building backend systems and APIs, constantly expanding my knowledge
-                in server-side technologies. Passionate about learning new tools and best practices,
-                I'm dedicated to growing my expertise while delivering reliable solutions.
+                I do stuff on the web - building things that work behind the scenes and sometimes what you see on screen too.
+                Right now, I'm focusing on leveling up my backend skills, but I love learning and trying out different parts
+                of web development. Always excited to build new things and figure out better ways to make them work!
               </S.BioText>
             </S.BioContent>
           </S.BiographySection>

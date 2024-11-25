@@ -1,8 +1,8 @@
 // src/components/Services/Services.tsx
 import { FC } from 'react';
-import { 
-  Code, 
-  Server, 
+import {
+  Code,
+  Server,
   Layout
 } from 'lucide-react';
 import * as S from './styles';
@@ -17,16 +17,16 @@ const Services: FC = () => {
   const services: Service[] = [
     {
       title: 'Backend Development',
-      description: 'Building robust backend systems, focusing on RESTful APIs, microservices, and PostgreSQL database design.',
+      description: 'Building the core systems that power web applications. Handling server logic, data flow, and making sure everything runs efficiently behind the scenes.',
       icon: Server
     },
     {
       title: 'API Development',
-      description: 'Creating clean, documented APIs with efficient database modeling and secure authentication systems.',
+      description: 'Designing and building clear, well-documented endpoints that make it easy for different services to communicate.',
       icon: Code
     },
     {
-      title: 'Basic Frontend',
+      title: 'Frontend Development',
       description: 'Simple and functional frontend implementations to complement your backend services.',
       icon: Layout
     }
@@ -37,7 +37,7 @@ const Services: FC = () => {
       <S.ContentContainer>
         <S.SectionTitle>Services</S.SectionTitle>
         <S.SectionSubtitle>
-          Backend specialist offering clean, efficient solutions
+          Helping bring your web projects to life, from server to screen
         </S.SectionSubtitle>
 
         <S.ServicesGrid>
