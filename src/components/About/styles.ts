@@ -14,26 +14,17 @@ export const AboutSection = styled.section`
 `;
 
 export const ContentContainer = styled.div`
-   width: 100%;
-  max-width: var(--max-width);
+    width: 100%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  padding: 0 2rem; 
 `;
 
 export const SectionTitle = styled.h2`
-  width: 100%;
-  max-width: 800px;
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   text-align: left;
-
-  @media (max-width: 768px) {
-    font-size: 1.75rem;
-    margin-bottom: 2rem;
-  }
 `;
 
 export const AboutGrid = styled.div`

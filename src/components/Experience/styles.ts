@@ -1,4 +1,3 @@
-// src/components/Experience/styles.ts
 import styled from 'styled-components';
 
 export const ExperienceSection = styled.section`
@@ -34,9 +33,10 @@ export const SectionTitle = styled.h2`
 
 export const TitleContainer = styled.div`
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: baseline; 
+  gap: 0.75rem;
   margin-bottom: 0.5rem;
+  flex-wrap: wrap; 
 `;
 
 export const TimelineSection = styled.div`
@@ -114,7 +114,7 @@ export const TimelineContent = styled.div<{ isLeft: boolean }>`
     position: absolute;
     top: 50%;
     ${({ isLeft }) => isLeft ? 'right: -0.5rem' : 'left: -0.5rem'};
-    transform: translateY(-50%) rotate(${({ isLeft }) => isLeft ? '45deg' : '45deg'}); // Fixed rotation
+    transform: translateY(-50%) rotate(${({ isLeft }) => isLeft ? '45deg' : '45deg'});
     width: 1rem;
     height: 1rem;
     background-color: ${({ theme }) => theme.bg.secondary};
@@ -129,7 +129,11 @@ export const TimelineContent = styled.div<{ isLeft: boolean }>`
     
     &::before {
       left: -0.5rem;
-      transform: translateY(-50%) rotate(135deg);
+      transform: translateY(-50%) rotate(45deg); 
+      border-right: none;
+      border-top: none;
+      border-left: ${({ theme }) => `1px solid ${theme.border}`};
+      border-bottom: ${({ theme }) => `1px solid ${theme.border}`};
     }
   }
 `;
@@ -152,10 +156,12 @@ export const TimelineDate = styled.span`
   margin-bottom: 0.5rem;
   display: block;
 `;
+
 export const TimelineType = styled.span`
   font-size: 0.875rem;
   color: ${({ theme }) => theme.text.secondary};
   font-style: italic;
+  white-space: nowrap; 
 `;
 
 export const TimelineTitle = styled.h4`
