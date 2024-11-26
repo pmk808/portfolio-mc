@@ -24,7 +24,7 @@ const certificationCategories = [
         name: "Network Security ITS Certification",
         issuer: "Certiport",
         date: "2023",
-        imageUrl: "/src/assets/images/certificates/its.png" 
+        imageUrl: "/images/certificates/its.png" 
       }
     ]
   },
@@ -35,7 +35,7 @@ const certificationCategories = [
         name: "Computer System Servicing NC II",
         issuer: "TESDA",
         date: "2023",
-        imageUrl: "/src/assets/images/certificates/tesda1.png" 
+        imageUrl: "/images/certificates/tesda1.png" 
       }
     ]
   },
@@ -46,37 +46,37 @@ const certificationCategories = [
         name: "Version Control",
         issuer: "Meta",
         date: "2023",
-        imageUrl: "/src/assets/images/certificates/meta1.png" 
+        imageUrl: "/images/certificates/meta1.png" 
       },
       {
         name: "Programming with JavaScript",
         issuer: "Meta",
         date: "2023",
-        imageUrl: "/src/assets/images/certificates/meta2.png" 
+        imageUrl: "/images/certificates/meta2.png" 
       },
       {
         name: "HTML and CSS in depth",
         issuer: "Meta",
         date: "2023",
-        imageUrl: "/src/assets/images/certificates/meta3.png" 
+        imageUrl: "/images/certificates/meta3.png" 
       },
       {
         name: "Introduction to Front-End Development",
         issuer: "Meta",
         date: "2023",
-        imageUrl: "/src/assets/images/certificates/meta4.png" 
+        imageUrl: "/images/certificates/meta4.png" 
       },
       {
         name: "Foundations: Data, Data, Everywhere",
         issuer: "Google",
         date: "2024",
-        imageUrl: "/src/assets/images/certificates/google1.png" 
+        imageUrl: "/images/certificates/google1.png" 
       },
       {
         name: "Technical Support Fundamentals",
         issuer: "Google",
         date: "2024",
-        imageUrl: "/src/assets/images/certificates/google2.png" 
+        imageUrl: "/images/certificates/google2.png" 
       }
     ]
   }
