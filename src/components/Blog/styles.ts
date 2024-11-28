@@ -60,3 +60,8 @@ export const ConstructionText = styled.p`
   font-size: 1rem;
   color: ${({ theme }) => theme.text.secondary};
 `;
+
+export const Emphasis = styled.span`
+  color: ${({ theme }) => theme.accent};
+  font-weight: 600;
+`;

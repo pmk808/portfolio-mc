@@ -174,3 +174,10 @@ export const ShowMoreButton = styled.button`
   }
 `;
 
+export const ProjectNote = styled.p`
+  text-align: center;
+  color: ${({ theme }) => theme.text.secondary};
+  font-size: 0.95rem;
+  margin-top: 2rem;
+  font-style: italic;
+`;

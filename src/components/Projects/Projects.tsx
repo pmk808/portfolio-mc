@@ -26,21 +26,21 @@ const Projects: FC = () => {
     {
       title: "BTr Status Tagging System",
       description: "The BTr Status Tagging System is a simple web-based application developed for the Bureau of the Treasury, RXI, as part of my internship. It features basic data visualization using ChartJS and is used to monitor and manage the status of incoming and outgoing documents.",
-      thumbnail: btr, 
+      thumbnail: btr,
       monthYear: "May 29, 2024",
       githubUrl: "https://github.com/pmk808/btr-tagging-system"
     },
     {
       title: "Bible Bliss",
       description: "Bible Bliss is a Laravel-powered web application that serves as a Bible content tool with dynamic content delivery, focusing on retrieving and displaying Bible verses from an external API based on user searches and daily verse updates.",
-      thumbnail: bible, 
+      thumbnail: bible,
       monthYear: "May 23, 2022",
       githubUrl: "https://github.com/pmk808/bible-bliss"
     },
     {
       title: "Hip-Hop Pulse",
       description: "Hip-Hop Pulse is a passion project designed as a simple blog to celebrate and explore the world of hip-hop. Covering its rich history, the trailblazers who shaped the genre, legendary figures, and the evolution of hip-hop today, this blog aims to highlight hip-hop as more than just music—it's a cultural phenomenon. As a hip-hop fan, this project serves as a space to spread awareness and appreciation for the art form and its influence.",
-      thumbnail: hiphop, 
+      thumbnail: hiphop,
       monthYear: "April 5, 2024",
       githubUrl: "https://github.com/pmk808/hiphop-pulse"
     },
@@ -92,59 +92,62 @@ const Projects: FC = () => {
 
   return (
     <S.ProjectsSection id="projects">
-    <S.ContentContainer>
-      <S.SectionTitle>Projects</S.SectionTitle>
-      <S.SectionSubtitle>
-        A collection of web, mobile, and desktop applications I've built throughout my journey
-      </S.SectionSubtitle>
-      <S.ProjectsGrid>
-        {visibleProjects.map((project, index) => (
-          <S.ProjectCard key={index}>
-            <S.ProjectContent>
-              <S.ProjectMainContent>
-                <S.ThumbnailContainer>
-                  <S.ProjectThumbnail 
-                    src={project.thumbnail} 
-                    alt={`${project.title} preview`}
-                  />
-                </S.ThumbnailContainer>
-                <S.ProjectInfo>
-                  <S.ProjectHeader>
-                    <S.ProjectTitle>{project.title}</S.ProjectTitle>
-                    {project.githubUrl && (
-                      <S.ProjectLink 
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`View ${project.title} on GitHub`}
-                      >
-                        <Github size={18} />
-                      </S.ProjectLink>
-                    )}
-                  </S.ProjectHeader>
-                  <S.ProjectDate>{project.monthYear}</S.ProjectDate>
-                  <S.ProjectDescription>
-                    {project.description}
-                  </S.ProjectDescription>
-                </S.ProjectInfo>
-              </S.ProjectMainContent>
-            </S.ProjectContent>
-          </S.ProjectCard>
-        ))}
-      </S.ProjectsGrid>
-      
-      {projects.length > 6 && (
-        <S.ShowMoreContainer>
-          <S.ShowMoreLine />
-          <S.ShowMoreButton onClick={() => setShowAllProjects(!showAllProjects)}>
-            {showAllProjects ? 'Show Less' : 'Show More'}
-          </S.ShowMoreButton>
-          <S.ShowMoreLine />
-        </S.ShowMoreContainer>
-      )}
-    </S.ContentContainer>
-  </S.ProjectsSection>
-);
+      <S.ContentContainer>
+        <S.SectionTitle>Projects</S.SectionTitle>
+        <S.SectionSubtitle>
+          A collection of web, mobile, and desktop applications I've built throughout my journey
+        </S.SectionSubtitle>
+        <S.ProjectsGrid>
+          {visibleProjects.map((project, index) => (
+            <S.ProjectCard key={index}>
+              <S.ProjectContent>
+                <S.ProjectMainContent>
+                  <S.ThumbnailContainer>
+                    <S.ProjectThumbnail
+                      src={project.thumbnail}
+                      alt={`${project.title} preview`}
+                    />
+                  </S.ThumbnailContainer>
+                  <S.ProjectInfo>
+                    <S.ProjectHeader>
+                      <S.ProjectTitle>{project.title}</S.ProjectTitle>
+                      {project.githubUrl && (
+                        <S.ProjectLink
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View ${project.title} on GitHub`}
+                        >
+                          <Github size={18} />
+                        </S.ProjectLink>
+                      )}
+                    </S.ProjectHeader>
+                    <S.ProjectDate>{project.monthYear}</S.ProjectDate>
+                    <S.ProjectDescription>
+                      {project.description}
+                    </S.ProjectDescription>
+                  </S.ProjectInfo>
+                </S.ProjectMainContent>
+              </S.ProjectContent>
+            </S.ProjectCard>
+          ))}
+        </S.ProjectsGrid>
+
+        {projects.length > 6 && (
+          <S.ShowMoreContainer>
+            <S.ShowMoreLine />
+            <S.ShowMoreButton onClick={() => setShowAllProjects(!showAllProjects)}>
+              {showAllProjects ? 'Show Less' : 'Show More'}
+            </S.ShowMoreButton>
+            <S.ShowMoreLine />
+          </S.ShowMoreContainer>
+        )}
+        <S.ProjectNote>
+          Additional backend projects and other work can be found on my GitHub profile.
+        </S.ProjectNote>
+      </S.ContentContainer>
+    </S.ProjectsSection>
+  );
 };
 
 export default Projects;
