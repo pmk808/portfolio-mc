@@ -2,13 +2,20 @@
 import { FC } from 'react';
 import * as S from './styles';
 import { Certifications } from './Certifications';
-import { Terminal, Code2, Quote } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 const About: FC = () => {
   return (
     <S.AboutSection id="about Me">
       <S.ContentContainer>
         <S.SectionTitle>About Me</S.SectionTitle>
+        <S.SectionSubtitle>
+          Want to know more? Check out my{' '}
+          <S.ResumeLink href="/resume_cabanes.pdf" download>
+            <span>resume</span>
+            <FileText size={14} />
+          </S.ResumeLink>
+        </S.SectionSubtitle>
 
         <S.AboutGrid>
           <S.BiographySection>
@@ -21,29 +28,40 @@ const About: FC = () => {
                       <span></span>
                       <span></span>
                     </S.TerminalDots>
-                    <S.TerminalTitle>Terminal</S.TerminalTitle>
+                    <S.TerminalTitle>PowerShell</S.TerminalTitle>
                   </S.TerminalHeader>
                   <S.TerminalBody>
                     <S.TerminalLine>
-                      <Terminal size={16} />
-                      <span>MC PHY CABANES</span>
+                      <S.Prompt>PS C:\Users\Guest&gt;</S.Prompt>
+                      <span>cd .\Developer\McPhy</span>
                     </S.TerminalLine>
                     <S.TerminalLine>
-                      <Code2 size={16} />
-                      <span>Web Developer</span>
+                      <S.Prompt>PS C:\Users\Guest\Developer\McPhy&gt;</S.Prompt>
+                      <span>Get-Content .\identity.json</span>
                     </S.TerminalLine>
+                    <S.TerminalOutput>
+                      {`{
+  "name": "MC PHY CABANES",
+  "role": "Web Developer",
+  "motto": "Mind over matter"
+}`}
+                    </S.TerminalOutput>
                     <S.TerminalLine>
-                      <Quote size={16} />
-                      <span>Mind over matter</span>
+                      <S.Prompt>PS C:\Users\Guest\Developer\McPhy&gt;</S.Prompt>
+                      <span>Get-Content .\about.txt</span>
+                    </S.TerminalLine>
+                    <S.TerminalOutput>
+                      I do stuff on the web - building things that work behind the scenes and sometimes what you see on screen too.
+                      Right now, I'm focusing on leveling up my backend skills, but I love learning and trying out different parts
+                      of web development. Always excited to build new things and figure out better ways to make them work!
+                    </S.TerminalOutput>
+                    <S.TerminalLine>
+                      <S.Prompt>PS C:\Users\Guest\Developer\McPhy&gt;</S.Prompt>
+                      <S.BlinkingCursor>_</S.BlinkingCursor>
                     </S.TerminalLine>
                   </S.TerminalBody>
                 </S.TerminalCard>
               </S.IntroHeader>
-              <S.BioText>
-                I do stuff on the web - building things that work behind the scenes and sometimes what you see on screen too.
-                Right now, I'm focusing on leveling up my backend skills, but I love learning and trying out different parts
-                of web development. Always excited to build new things and figure out better ways to make them work!
-              </S.BioText>
             </S.BioContent>
           </S.BiographySection>
 

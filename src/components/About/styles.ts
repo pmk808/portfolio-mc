@@ -1,5 +1,5 @@
 // src/components/About/styles.ts
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const AboutSection = styled.section`
   width: 100%;
@@ -60,11 +60,52 @@ export const IntroHeader = styled.div`
 
 export const TerminalCard = styled.div`
   width: 100%;
-  max-width: 500px;
+  max-width: 900px;
   background: ${({ theme }) => theme.bg.secondary};
   border: 1px solid ${({ theme }) => theme.border};
   border-radius: 8px;
   overflow: hidden;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+`;
+
+export const SectionSubtitle = styled.p`
+  font-size: 1.125rem;
+  color: ${({ theme }) => theme.text.secondary};
+  text-align: left;
+  margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+`;
+
+export const ResumeLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: ${({ theme }) => theme.accent};
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+    
+    svg {
+      transform: translateY(-1px);
+    }
+  }
+
+  svg {
+    transition: transform 0.2s ease;
+  }
 `;
 
 export const TerminalHeader = styled.div`
@@ -73,6 +114,10 @@ export const TerminalHeader = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.border};
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 0.75rem;
+  }
 `;
 
 export const TerminalDots = styled.div`
@@ -97,44 +142,101 @@ export const TerminalDots = styled.div`
       background-color: #27c93f;
     }
   }
+
+  @media (max-width: 768px) {
+    gap: 0.25rem;
+    
+    span {
+      width: 0.625rem;
+      height: 0.625rem;
+    }
+  }
 `;
 
 export const TerminalTitle = styled.div`
   color: ${({ theme }) => theme.text.secondary};
   font-size: 0.875rem;
   font-family: monospace;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+`;
+
+const blink = keyframes`
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+`;
+
+export const Prompt = styled.span`
+  color: ${({ theme }) => theme.accent};
+  margin-right: 0.5rem;
+  user-select: none;
+  flex-shrink: 0;
+
+  @media (max-width: 480px) {
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+`;
+
+export const TerminalOutput = styled.pre`
+  font-family: 'Consolas', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: ${({ theme }) => theme.text.primary};
+  margin: 0.5rem 0 1rem 0;
+  white-space: pre-wrap;
+  padding-left: 1rem;
+  width: 100%;
+  overflow-x: auto;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+`;
+
+export const BlinkingCursor = styled.span`
+  animation: ${blink} 1s step-end infinite;
+  color: ${({ theme }) => theme.text.primary};
+`;
+
+export const TerminalLine = styled.div`
+  display: flex;
+  align-items: center;
+  font-family: 'Consolas', monospace;
+  font-size: 0.9rem;
+  color: ${({ theme }) => theme.text.primary};
+  white-space: nowrap;
+  min-width: min-content;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+  }
 `;
 
 export const TerminalBody = styled.div`
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-`;
+  gap: 0.5rem;
+  background-color: ${({ theme }) => theme.bg.primary};
+  overflow-x: auto;
 
-export const TerminalLine = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: ${({ theme }) => theme.text.primary};
-  font-size: 1rem;
-
-  svg {
-    color: ${({ theme }) => theme.accent};
+  @media (max-width: 768px) {
+    padding: 1rem;
   }
-
-  span {
-    font-family: monospace;
-  }
-`;
-
-export const BioText = styled.p`
-  color: ${({ theme }) => theme.text.secondary};
-  line-height: 1.8;
-  font-size: 1.1rem;
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
 `;
 
 export const TechnologiesSection = styled.div`
@@ -377,20 +479,6 @@ export const TimelineDescription = styled.p`
   line-height: 1.6;
 `;
 
-export const BioSection = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 240px 1fr; // Fixed width for image column
-  gap: 2.5rem;
-  align-items: start;
-  max-width: 800px;
-  margin-bottom: 2rem;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-`;
 
 export const ImageContainer = styled.div`
   width: 240px;
@@ -426,4 +514,13 @@ export const RoleLabel = styled.h4`
   color: ${({ theme }) => theme.accent};
   margin-bottom: 1.8rem;
   font-weight: 500;
+`;
+
+export const TerminalBio = styled.div`
+  font-family: monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: ${({ theme }) => theme.text.secondary};
+  padding: 1rem 0;
+  white-space: pre-wrap;
 `;
