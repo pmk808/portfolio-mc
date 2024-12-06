@@ -10,11 +10,12 @@ const About: FC = () => {
       <S.ContentContainer>
         <S.SectionTitle>About Me</S.SectionTitle>
         <S.SectionSubtitle>
-          Want to know more? Check out my{' '}
+          Here's my {' '}
           <S.ResumeLink href="/resume_cabanes.pdf" download>
             <span>resume</span>
             <FileText size={14} />
           </S.ResumeLink>
+          {' '} if you're interested
         </S.SectionSubtitle>
 
         <S.AboutGrid>
