@@ -23,11 +23,8 @@ useEffect(() => {
       const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
       
       const response = await fetch('https://blog-api-issf.onrender.com/posts', {
-        mode: 'cors',
-        credentials: 'include',  
         headers: {
           'Content-Type': 'application/json',
-          'X-API-Key': import.meta.env.VITE_API_KEY || '', 
         },
       });
 
