@@ -65,3 +65,35 @@ export const Emphasis = styled.span`
   color: ${({ theme }) => theme.accent};
   font-weight: 600;
 `;
+
+export const PostsContainer = styled.div`
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+`;
+
+export const PostItem = styled.article`
+  background: ${({ theme }) => theme.background.secondary};
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
+export const PostTitle = styled.h3`
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text.primary};
+  margin-bottom: 0.5rem;
+`;
+
+export const PostDate = styled.time`
+  font-size: 0.875rem;
+  color: ${({ theme }) => theme.text.secondary};
+  display: block;
+  margin-bottom: 1rem;
+`;
+
+export const PostContent = styled.p`
+  color: ${({ theme }) => theme.text.primary};
+  line-height: 1.6;
+`;
