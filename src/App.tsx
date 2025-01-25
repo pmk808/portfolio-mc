@@ -6,6 +6,7 @@ import { GlobalStyles } from './styles/GlobalStyles';
 import { MainLayout } from './layouts/MainLayout/MainLayout';
 import { Home } from './pages/Home';
 import { useTheme } from './context/ThemeContext';
+import { StyleSheetManager } from 'styled-components';
 
 const ThemedApp = () => {
   const { isDark } = useTheme();
@@ -25,9 +26,11 @@ const ThemedApp = () => {
 
 const App = () => {
   return (
-    <CustomThemeProvider>
-      <ThemedApp />
-    </CustomThemeProvider>
+    <StyleSheetManager shouldForwardProp={() => true}>
+      <CustomThemeProvider>
+        <ThemedApp />
+      </CustomThemeProvider>
+    </StyleSheetManager>
   );
 };
 

@@ -73,7 +73,7 @@ export const PostsContainer = styled.div`
 `;
 
 export const PostItem = styled.article`
-  background: ${({ theme }) => theme.background.secondary};
+  background: ${({ theme }) => theme.bg.secondary};
   border-radius: 0.5rem;
   padding: 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
