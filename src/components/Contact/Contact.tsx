@@ -17,7 +17,8 @@ const Contact: FC = () => {
           <S.ContactInfo>
             <S.ContactText>
               I'm always open to discussing new projects, creative ideas, or
-              opportunities to be part of your visions.
+              opportunities to be part of your visions. <S.Highlight>Currently available for part-time positions 
+              and freelance projects.</S.Highlight>
             </S.ContactText>
             
             <S.SocialLinksContainer>

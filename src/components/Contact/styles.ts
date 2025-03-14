@@ -104,3 +104,8 @@ export const ContactLink = styled.a`
     width: 100%;
   }
 `;
+
+export const Highlight = styled.span`
+  color: ${({ theme }) => theme.accent};
+  font-weight: 500;
+`;

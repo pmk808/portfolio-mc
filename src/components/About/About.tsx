@@ -44,7 +44,8 @@ const About: FC = () => {
                       {`{
   "name": "MC PHY CABANES",
   "role": "Web Developer",
-  "motto": "Mind over matter"
+  "motto": "Mind over matter",
+  "status": "Available for part-time positions and freelance projects"
 }`}
                     </S.TerminalOutput>
                     <S.TerminalLine>
@@ -55,6 +56,8 @@ const About: FC = () => {
                       I do stuff on the web - building things that work behind the scenes and sometimes what you see on screen too.
                       Right now, I'm focusing on leveling up my backend skills, but I love learning and trying out different parts
                       of web development. Always excited to build new things and figure out better ways to make them work!
+                      
+                      Currently looking for new opportunities to collaborate on interesting projects or join a team where I can contribute my skills.
                     </S.TerminalOutput>
                     <S.TerminalLine>
                       <S.Prompt>PS C:\Users\Guest\Developer\McPhy&gt;</S.Prompt>
@@ -72,5 +75,6 @@ const About: FC = () => {
     </S.AboutSection>
   );
 };
+
 
 export default About;
