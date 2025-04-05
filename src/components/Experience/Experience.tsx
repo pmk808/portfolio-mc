@@ -13,7 +13,7 @@ interface TimelineItem {
 const Experience: FC = () => {
   const timelineData: TimelineItem[] = [
     {
-      date: "Feb 2024 - Present",
+      date: "Oct 2024 - Present",
       title: "Web Developer",
       type: "Freelance (Part-time)",
       company: "Independent",
