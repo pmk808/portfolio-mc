@@ -13,11 +13,11 @@ interface TimelineItem {
 const Experience: FC = () => {
   const timelineData: TimelineItem[] = [
     {
-      date: "Oct 2024 - Present",
-      title: "Backend Developer",
-      type: "Part-time",
-      company: "Deviation Technologies",
-      description: "Developing RESTful APIs and microservices using Go and PostgreSQL. Collaborating on UI development for client portal using React and TypeScript."
+      date: "Feb 2024 - Present",
+      title: "Web Developer",
+      type: "Freelance (Part-time)",
+      company: "Independent",
+      description: "Developing RESTful APIs and microservices using Go and PostgreSQL. Handling server-side integration and database architecture, with occasional React implementation for simple UIs when needed."
     },
     {
       date: "Jun 2024 - Present",
