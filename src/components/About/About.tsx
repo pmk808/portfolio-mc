@@ -11,7 +11,7 @@ const About: FC = () => {
         <S.SectionTitle>About Me</S.SectionTitle>
         <S.SectionSubtitle>
           Here's my {' '}
-          <S.ResumeLink href="/resume_cabanes.pdf" download>
+          <S.ResumeLink href="/resume_cabanes_latest.pdf" download>
             <span>resume</span>
             <FileText size={14} />
           </S.ResumeLink>
