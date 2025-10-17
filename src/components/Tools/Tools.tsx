@@ -13,7 +13,9 @@ const Tools: FC = () => {
       "Git",
       "NodeJS",
       "MongoDB",
-      "Azure DevOps"
+      "Azure DevOps",
+      "Azure Functions",
+      "Python"
     ],
     previous: [
       "Laravel",

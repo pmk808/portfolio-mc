@@ -13,14 +13,14 @@ interface TimelineItem {
 const Experience: FC = () => {
   const timelineData: TimelineItem[] = [
     {
-      date: "Oct 2024 - Present",
+      date: "Aug 2024 - Present",
       title: "Web Developer",
       type: "Freelance (Part-time)",
       company: "Independent",
       description: "Developing RESTful APIs and microservices using Go and PostgreSQL. Handling server-side integration and database architecture, with occasional React implementation for simple UIs when needed."
     },
     {
-      date: "Jun 2024 - Present",
+      date: "Jul 2024 - Present",
       title: "Web Developer",
       type: "Full-time",
       company: "City Government of Davao, EBSU Office",
@@ -47,7 +47,7 @@ const Experience: FC = () => {
       <S.ContentContainer>
         <S.SectionTitle>Experience</S.SectionTitle>
         <S.SectionSubtitle>
-        From teaching English to market research, I've explored various roles before finding my passion in backend development
+        From teaching English to market research, I've explored various roles before finding my passion in web development
         </S.SectionSubtitle>
         <S.TimelineSection>
           <S.Timeline>

@@ -10,7 +10,7 @@ const About: FC = () => {
       <S.ContentContainer>
         <S.SectionTitle>About Me</S.SectionTitle>
         <S.SectionSubtitle>
-          Here's my {' '}
+          Here's my{' '}
           <S.ResumeLink href="/resume_cabanes_latest.pdf" download>
             <span>resume</span>
             <FileText size={14} />
@@ -29,38 +29,34 @@ const About: FC = () => {
                       <span></span>
                       <span></span>
                     </S.TerminalDots>
-                    <S.TerminalTitle>PowerShell</S.TerminalTitle>
+                    <S.TerminalTitle>bash</S.TerminalTitle>
                   </S.TerminalHeader>
                   <S.TerminalBody>
                     <S.TerminalLine>
-                      <S.Prompt>PS C:\Users\Guest&gt;</S.Prompt>
-                      <span>cd .\Developer\McPhy</span>
-                    </S.TerminalLine>
-                    <S.TerminalLine>
-                      <S.Prompt>PS C:\Users\Guest\Developer\McPhy&gt;</S.Prompt>
-                      <span>Get-Content .\identity.json</span>
+                      <S.Prompt>~/McPhy&gt;</S.Prompt>
+                      <span>whoami</span>
                     </S.TerminalLine>
                     <S.TerminalOutput>
                       {`{
   "name": "MC PHY CABANES",
-  "role": "Web Developer",
-  "motto": "Mind over matter",
-  "status": "Available for part-time positions and freelance projects"
+  "title": "Web Developer",
+  "focus": "Building client-focused solutions",
+  "status": "Available for part-time positions & freelance projects"
 }`}
                     </S.TerminalOutput>
                     <S.TerminalLine>
-                      <S.Prompt>PS C:\Users\Guest\Developer\McPhy&gt;</S.Prompt>
-                      <span>Get-Content .\about.txt</span>
+                      <S.Prompt>~/McPhy&gt;</S.Prompt>
+                      <span>cat ./summary.txt</span>
                     </S.TerminalLine>
                     <S.TerminalOutput>
-                      I do stuff on the web - building things that work behind the scenes and sometimes what you see on screen too.
-                      Right now, I'm focusing on leveling up my backend skills, but I love learning and trying out different parts
-                      of web development. Always excited to build new things and figure out better ways to make them work!
+                      I'm a web developer who builds things for the web, handling everything from the user interface you see to the server-side logic that makes it all work.
                       
-                      Currently looking for new opportunities to collaborate on interesting projects or join a team where I can contribute my skills.
+                      My main goal is to build practical solutions that solve real problems for clients. I focus on understanding the "why" behind every project to ensure the final product delivers genuine value. I enjoy working across the full stack and am always learning new ways to bring ideas to life.
+                      
+                      I'm currently looking for new opportunities to collaborate on interesting projects or join a team where I can contribute and grow.
                     </S.TerminalOutput>
                     <S.TerminalLine>
-                      <S.Prompt>PS C:\Users\Guest\Developer\McPhy&gt;</S.Prompt>
+                      <S.Prompt>~/McPhy&gt;</S.Prompt>
                       <S.BlinkingCursor>_</S.BlinkingCursor>
                     </S.TerminalLine>
                   </S.TerminalBody>
@@ -75,6 +71,5 @@ const About: FC = () => {
     </S.AboutSection>
   );
 };
-
 
 export default About;
