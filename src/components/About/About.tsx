@@ -11,7 +11,7 @@ const About: FC = () => {
         <S.SectionTitle>About Me</S.SectionTitle>
         <S.SectionSubtitle>
           Here's my{' '}
-          <S.ResumeLink href="/resume_cabanes_latest.pdf" download>
+          <S.ResumeLink href="/resume_cabanes_latest_modified.pdf" download>
             <span>resume</span>
             <FileText size={14} />
           </S.ResumeLink>
@@ -50,9 +50,9 @@ const About: FC = () => {
                     </S.TerminalLine>
                     <S.TerminalOutput>
                       I'm a web developer who builds things for the web, handling everything from the user interface you see to the server-side logic that makes it all work.
-                      
+
                       My main goal is to build practical solutions that solve real problems for clients. I focus on understanding the "why" behind every project to ensure the final product delivers genuine value. I enjoy working across the full stack and am always learning new ways to bring ideas to life.
-                      
+
                       I'm currently looking for new opportunities to collaborate on interesting projects or join a team where I can contribute and grow.
                     </S.TerminalOutput>
                     <S.TerminalLine>
